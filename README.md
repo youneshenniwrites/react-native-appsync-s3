@@ -31,7 +31,7 @@ git clone https://github.com/aws-samples/react-native-appsync-s3.git
 cd react-native-appsync-s3
 ```
 
-2. Add amplify dependencies to your project.
+2. Add AWS Amplify dependencies to your project.
 
 ```
 yarn add aws-amplify aws-amplify-react-native
@@ -41,7 +41,7 @@ yarn add aws-amplify aws-amplify-react-native
 npm install aws-amplify aws-amplify-react-native
 ```
 
-3. Initialise the amplify project.
+3. Initialise the AWS Amplify project.
 
 ```
 amplify init
@@ -108,8 +108,8 @@ expo start --android
 
 3. Create a new user.
 
-The app uses the Higher Order Component **withAuthenticator** (HOC) from AWS Amplify to perform the authentication flow: sign up, confirm sign up and sign in users.
+* The app uses the Higher Order Component **withAuthenticator** (HOC) from AWS Amplify to perform the authentication flow: sign up, confirm sign up and sign in users.
 
 4. Add and display pictures.
 
-If the application runs successfully you should be able to press the add button, allow access to device library, and select a picture from your device. This will upload the picture to S3 then make a GraphQL call to enter the record into DynamoDB. You can then press the refresh button to display the picture on the screen.
+* If the application runs successfully you should be able to press the add button, allow access to device library, and select a picture from your device. This will upload the picture to S3 then make a GraphQL call to enter the record into DynamoDB. You can then press the refresh button to display the picture on the screen.
