@@ -10,3 +10,5 @@ node_modules/
 aws-exports.js
 awsconfiguration.json
 keys.js
+yarn.lock
+package-lock.json
