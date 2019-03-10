@@ -4,7 +4,8 @@ import {
 	StyleSheet,
 	Image,
 	Dimensions,
-	ScrollView
+	ScrollView,
+	TouchableOpacity
 } from 'react-native';
 import { Icon } from 'native-base';
 import { graphql } from 'react-apollo';
@@ -16,12 +17,8 @@ class AllPhotos extends React.Component {
 		allImagesURIs: []
 	}
 
-	componentDidMount = () => {
-		this.getAllPics()
-	}
-
-	foundSister = () => {
-		console.log('Sister here')
+	componentDidMount = async () => {
+		await this.getAllPics()
 	}
 
 	getAllPics = () => {
@@ -32,17 +29,19 @@ class AllPhotos extends React.Component {
 		*/
 		let {photos} = this.props
 		let access = {level: 'public'}
-		let allphotos = []
 		if (photos && photos.items) {
 			photos.items.map((photo, index) => {
 				let key = photo.file.key.substring(7) // get rid of folder name in key
 				Storage.get(key, access)
-				.then(response => {
+				.then((response) => {
 					uri = response.substr(0, 98) // extract uri from response
-					// allphotos.push(uri)
-					this.setState({
-						allImagesURIs: [...this.state.allImagesURIs, uri]
-					})
+					if (this.state.allImagesURIs.includes(uri)) {
+						return
+					} else {
+						this.setState(prevState => ({
+							allImagesURIs: [...prevState.allImagesURIs, uri]
+						}))
+					}
 				})
 				.catch(err => console.log(err))
 			})
@@ -52,15 +51,20 @@ class AllPhotos extends React.Component {
 	render() {
 		let {allImagesURIs} = this.state
 		return (
-			<ScrollView contentContainerStyle={styles.container}>
-				{
-					allImagesURIs.map((uri, index) => {
-						return (
-							<Image key={index} style={styles.image} source={{ uri: uri }}/>
-						)
+			<View style={{flex: 1, alignItems: 'center'}}>
+				<TouchableOpacity onPress={this.componentDidMount}>
+					<Icon active name="refresh" />
+				</TouchableOpacity>
+				<ScrollView contentContainerStyle={styles.container}>
+					{	
+						allImagesURIs.map((uri, index) => {
+							return (
+								<Image key={index} style={styles.image} source={{ uri: uri }}/>
+							)
+						})
 					}
-				)}
-			</ScrollView>
+				</ScrollView>
+			</View>
 		);
 	}
 }
