@@ -52,11 +52,18 @@ amplify init
 4. Configure an Amazon Cognito User Pool to manage user credentials.
 ```
 amplify add auth
+
+# When prompt, choose: Yes, use the default configuration.
 ```
-**When prompt, choose: Yes, use the default configuration.**
 
 5. Configure an Amazon S3 bucket to store files.
 
 ```
 amplify add storage
+
+# Choose: Content (Images, audio, video, etc.)
+# Give access to only authenticated users.
+# Give users read/write acces.
 ```
+
+
