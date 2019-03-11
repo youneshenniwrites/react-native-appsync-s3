@@ -1,5 +1,7 @@
 # React Native AppSync S3 #
 
+<img width="1106" alt="Final" src="https://user-images.githubusercontent.com/26605247/54120181-00bad600-43ef-11e9-953b-04f08edfc031.png">
+
 This app allows the user to do the following:
 
 * Sign Up/In to the platform.
