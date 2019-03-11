@@ -29,24 +29,24 @@ class AllPhotos extends React.Component {
 		*/
 		let {photos} = this.props
 		let access = {level: 'public'}
-		if (photos && photos.items) {
-			photos.items.map((photo, index) => {
-				let key = photo.file.key
-				key = key.substring(key.indexOf('/') + 1) // get rid of folder name in key
-				Storage.get(key, access)
-				.then((response) => {
-					let uri = response.substr(0, response.indexOf('?')) // extract uri from response
-					if (this.state.allImagesURIs.includes(uri)) {
-						return
-					} else {
-						this.setState(prevState => ({
-							allImagesURIs: [...prevState.allImagesURIs, uri]
-						}))
-					}
-				})
-				.catch(err => console.log(err))
+		photos.items.map((photo, index) => {
+			let key = photo.file.key
+			key = key.substring(key.indexOf('/') + 1) // get rid of folder name in key
+			Storage.get(key, access)
+			.then((response) => {
+				let uri = response.substr(0, response.indexOf('?')) // extract uri from response
+				if (this.state.allImagesURIs.includes(uri)) {
+					console.log('KO')
+					return
+				} else {
+					console.log('OK')
+					this.setState(prevState => ({
+						allImagesURIs: [...prevState.allImagesURIs, uri]
+					}))
+				}
 			})
-		}
+			.catch(err => console.log(err))
+		})
 	}
 
 	render() {
