@@ -51,7 +51,6 @@ Follow the same instructions as below.
 
 <img width="561" alt="init" src="https://user-images.githubusercontent.com/26605247/54110565-98152e80-43d9-11e9-9eed-e728cbf2ecd6.png">
 
-
 4. Configure an Amazon Cognito User Pool to store users credentials.
 ```
 amplify add auth
@@ -106,7 +105,19 @@ yarn
 npm install
 ```
 
-2. Launch the React Native app in your simulator.
+2. You will need your AWS IAM credentials before running the application. 
+ * Copy your access and secret keys in the `src/myKeys.js` file of your project.
+
+```javascript
+const keys = {
+ accessKey: 'blablabla',
+ secretKey: 'blablabla',
+}
+export default keys;
+```
+ * Save changes.
+
+3. Launch the React Native app in your simulator from the terminal under your project directory.
 
 ```
 expo start --ios
