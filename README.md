@@ -84,8 +84,12 @@ amplify add api
 
 ```
 amplify push
+```
 
-# When asked if you would like to generate client code, say no.
+<img width="473" alt="cloudformation" src="https://user-images.githubusercontent.com/26605247/54111473-d7447f00-43db-11e9-9fe8-57edd0a36fe8.png">
+
+```
+Do you want to generate code for your newly created GraphQL API: No.
 ```
 
 The AWS Amplify CLI will create an Amazon Cognito User Pool and Identity Pool, an Amazon S3 bucket to store each users photos and an AWS AppSync GraphQL API that uses Amazon DynamoDB to store data.
