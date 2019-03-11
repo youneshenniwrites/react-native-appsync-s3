@@ -31,10 +31,11 @@ class AllPhotos extends React.Component {
 		let access = {level: 'public'}
 		if (photos && photos.items) {
 			photos.items.map((photo, index) => {
-				let key = photo.file.key.substring(7) // get rid of folder name in key
+				let key = photo.file.key
+				key = key.substring(key.indexOf('/') + 1) // get rid of folder name in key
 				Storage.get(key, access)
 				.then((response) => {
-					uri = response.substr(0, 98) // extract uri from response
+					let uri = response.substr(0, response.indexOf('?')) // extract uri from response
 					if (this.state.allImagesURIs.includes(uri)) {
 						return
 					} else {
