@@ -47,6 +47,11 @@ npm install aws-amplify aws-amplify-react-native
 amplify init
 ```
 
+Follow the same instructions as below.
+
+<img width="561" alt="init" src="https://user-images.githubusercontent.com/26605247/54110565-98152e80-43d9-11e9-9eed-e728cbf2ecd6.png">
+
+
 4. Configure an Amazon Cognito User Pool to store users credentials.
 ```
 amplify add auth
