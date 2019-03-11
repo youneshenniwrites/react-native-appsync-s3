@@ -26,7 +26,7 @@ This app allows the user to do the following:
 1. Clone this repo to your local machine.
 
 ```
-git clone https://github.com/aws-samples/react-native-appsync-s3.git
+git clone https://github.com/jtaylor1989/react-native-appsync-s3.git
 
 cd react-native-appsync-s3
 ```
