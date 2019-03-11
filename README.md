@@ -74,9 +74,10 @@ amplify add storage
 ```
 amplify add api
 
+# Choose GraphQL as the API service. 
 # Choose an authorization type for the API: Amazon Cognito User Pool
 # Do you have an annotated GraphQL schema? Yes
-# Provide your schema file path: src/graphQL/shcema.graphql
+# Provide your schema file path: src/graphQL/schema.graphql
 ```
 
 7. Deploy your project to the AWS.
