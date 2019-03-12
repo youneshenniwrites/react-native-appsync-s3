@@ -138,3 +138,6 @@ expo start --android
 * If the application runs successfully you should be able to press the add button, allow access to device library, and select a picture from your device. This will upload the picture to S3 then make a GraphQL call to enter the record into DynamoDB. 
 
 * You can then press the refresh button to display the picture on the screen.
+
+# Contribute
+* This project needs lots of improvement. Help me grow and improve it :muscle:.
